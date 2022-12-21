@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 20,
             ),
             const Text(
-              "Super Estate Agency",
+              "Super Estates",
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w400,

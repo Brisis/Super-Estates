@@ -80,7 +80,7 @@ class _LoginViewState extends State<LoginView> {
               "Email",
               style: TextStyle(
                 fontSize: 18,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
               ),
             ),
             TextField(
@@ -95,7 +95,7 @@ class _LoginViewState extends State<LoginView> {
               "Password",
               style: TextStyle(
                 fontSize: 18,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
               ),
             ),
             TextField(

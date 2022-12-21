@@ -82,7 +82,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 "Full Name",
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               TextField(
@@ -97,7 +97,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 "Email",
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               TextField(
@@ -113,7 +113,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 "Password",
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               TextField(

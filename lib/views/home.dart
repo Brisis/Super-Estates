@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seai/helpers/constants.dart';
+import 'package:seai/views/profile/profile.dart';
+import 'package:seai/widgets/drawer_item.dart';
+import 'package:seai/widgets/general/estate_amenities.dart';
+import 'package:seai/widgets/general/estate_card.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -11,6 +15,8 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final _searchController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void dispose() {
     _searchController.dispose();
@@ -20,12 +26,13 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => _scaffoldKey.currentState!.openDrawer(),
           icon: const Icon(
             Icons.menu,
             color: kDarkColor,
@@ -34,7 +41,9 @@ class _HomeViewState extends State<HomeView> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(routeTransition(const ProfileView()));
+            },
             icon: Container(
               height: 30,
               width: 30,
@@ -48,6 +57,7 @@ class _HomeViewState extends State<HomeView> {
           ),
         ],
       ),
+      drawer: const DrawerItem(),
       body: Padding(
         padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 30.0),
         child: ListView(
@@ -121,7 +131,7 @@ class _HomeViewState extends State<HomeView> {
                   "Featured Listings",
                   style: TextStyle(
                     fontSize: 17,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 TextButton(
@@ -131,7 +141,7 @@ class _HomeViewState extends State<HomeView> {
                     style: TextStyle(
                       fontSize: 15,
                       color: kGreyColor,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
@@ -140,25 +150,23 @@ class _HomeViewState extends State<HomeView> {
             SizedBox(
               height: 270,
               width: MediaQuery.of(context).size.width,
-              child: Expanded(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  itemBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 270,
-                      width: 300,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 20.0),
-                        child: EstateListingCard(
-                          image: "assets/images/apart1.jpg",
-                          imageHeight: 150.0,
-                        ),
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return const SizedBox(
+                    height: 270,
+                    width: 300,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                      child: EstateListingCard(
+                        image: "assets/images/apart1.jpg",
+                        imageHeight: 150.0,
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
             const SizedBox(height: 20),
@@ -166,12 +174,17 @@ class _HomeViewState extends State<HomeView> {
               "Recommended",
               style: TextStyle(
                 fontSize: 17,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
               ),
             ),
             const SizedBox(height: 15),
-            EstateListingCard(
+            const EstateListingCard(
               image: "assets/images/apart2.jpg",
+              imageHeight: 150.0,
+            ),
+            const SizedBox(height: 20),
+            const EstateListingCard(
+              image: "assets/images/apart1.jpg",
               imageHeight: 150.0,
             ),
           ],
@@ -204,178 +217,18 @@ class CustomEstatePill extends StatelessWidget {
             icon,
             color: kGreyColor,
           ),
+          const SizedBox(
+            width: 8.0,
+          ),
           Text(
             title,
             style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
       ),
-    );
-  }
-}
-
-class EstateListingCard extends StatelessWidget {
-  final String image;
-  final double imageHeight;
-  const EstateListingCard({
-    super.key,
-    required this.image,
-    required this.imageHeight,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Container(
-            height: imageHeight,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 15.0, horizontal: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      CupertinoIcons.heart,
-                      color: Colors.white,
-                      size: 35,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                "\$28.5k",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                "4.2",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Expanded(
-                child: Text(
-                  "360ADR Chelsea Loft Drive!",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                  border: Border.all(color: kGreyColor, width: 1.0),
-                  borderRadius: BorderRadius.circular(15),
-                  color: kVerifiyColor,
-                ),
-                child: const Center(
-                  child: Icon(
-                    Icons.done_rounded,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              EstateAmenitiesItem(
-                name: "4 Beds",
-                icon: Icons.bed,
-              ),
-              EstateAmenitiesItem(
-                name: "Bath",
-                icon: Icons.shower,
-              ),
-              EstateAmenitiesItem(
-                name: "1.045 ft",
-                icon: Icons.line_style,
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class EstateAmenitiesItem extends StatelessWidget {
-  final String name;
-  final IconData icon;
-  const EstateAmenitiesItem({
-    super.key,
-    required this.name,
-    required this.icon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 30,
-          width: 30,
-          decoration: BoxDecoration(
-              border: Border.all(color: kGreyColor, width: 1.0),
-              borderRadius: BorderRadius.circular(15)),
-          child: Center(
-            child: Icon(
-              icon,
-              color: kSecondaryColor,
-            ),
-          ),
-        ),
-        const SizedBox(
-          width: 8.0,
-        ),
-        Text(
-          name,
-          style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
     );
   }
 }

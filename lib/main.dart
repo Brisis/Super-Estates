@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:seai/general/welcome.dart';
+import 'package:seai/views/general/welcome.dart';
 import 'package:seai/helpers/constants.dart';
 
 void main() {
@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
           primary: kPrimaryColor,
           secondary: kPrimaryColor,
         ),
-        textTheme: GoogleFonts.nunitoSansTextTheme(Theme.of(context).textTheme),
+        // textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
+        fontFamily: 'Montserrat',
       ),
       home: const WelcomeScreen(),
     );
