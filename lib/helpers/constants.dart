@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+const String googleApiKey = "AIzaSyDSsuvEinCmOlku-LrOuhZqIeinO2Fcu28";
+
 const kPrimaryColor = Color(0xFF3B53AD);
 const kSecondaryColor = Color(0xFF029161);
 const kDarkColor = Color(0xFF111111);

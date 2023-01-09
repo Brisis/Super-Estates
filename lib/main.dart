@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
           primary: kPrimaryColor,
           secondary: kPrimaryColor,
         ),
-        // textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
-        fontFamily: 'Montserrat',
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+        //fontFamily: 'Montserrat',
       ),
       home: const WelcomeScreen(),
     );

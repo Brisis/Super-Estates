@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seai/helpers/constants.dart';
+import 'package:seai/views/category.dart';
 import 'package:seai/views/profile/profile.dart';
 import 'package:seai/widgets/drawer_item.dart';
 import 'package:seai/widgets/general/estate_amenities.dart';
 import 'package:seai/widgets/general/estate_card.dart';
+import 'package:seai/widgets/general/filter_search.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -39,6 +41,16 @@ class _HomeViewState extends State<HomeView> {
             size: 30,
           ),
         ),
+        title: const Center(
+          child: Text(
+            "Super Estate Agency",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: kBlackColor,
+            ),
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -62,16 +74,6 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 30.0),
         child: ListView(
           children: [
-            const Text(
-              "Super Estate Agency",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
             Row(
               children: [
                 Expanded(
@@ -81,13 +83,15 @@ class _HomeViewState extends State<HomeView> {
                       child: TextField(
                         controller: _searchController,
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 8),
-                            filled: true,
-                            fillColor: Colors.grey.shade100,
-                            isDense: true,
-                            border: InputBorder.none,
-                            prefixIcon: const Icon(Icons.search),
-                            hintText: 'Search city or area'),
+                          contentPadding:
+                              const EdgeInsets.symmetric(vertical: 8),
+                          filled: true,
+                          fillColor: Colors.grey.shade100,
+                          isDense: true,
+                          border: InputBorder.none,
+                          prefixIcon: const Icon(Icons.search),
+                          hintText: 'Search city or area',
+                        ),
                       ),
                     ),
                   ),
@@ -96,7 +100,17 @@ class _HomeViewState extends State<HomeView> {
                   width: 15,
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const Dialog(
+                          insetPadding: EdgeInsets.zero,
+                          child: FilterSearchDialog(),
+                        );
+                      },
+                    );
+                  },
                   icon: const Icon(
                     Icons.filter_alt_outlined,
                     color: kPrimaryColor,
@@ -107,19 +121,45 @@ class _HomeViewState extends State<HomeView> {
             ),
             const SizedBox(height: 15),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                CustomEstatePill(
-                  title: "House",
-                  icon: Icons.house,
+                Expanded(
+                  child: CustomEstateCategory(
+                    title: "House",
+                    icon: Icons.house,
+                    items: 220,
+                  ),
                 ),
-                CustomEstatePill(
-                  title: "Apartment",
-                  icon: Icons.apartment,
+                SizedBox(
+                  width: 10,
                 ),
-                CustomEstatePill(
-                  title: "Room",
-                  icon: Icons.window,
+                Expanded(
+                  child: CustomEstateCategory(
+                    title: "Apartment",
+                    icon: Icons.apartment,
+                    items: 190,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              children: const [
+                Expanded(
+                  child: CustomEstateCategory(
+                    title: "Room",
+                    icon: Icons.window,
+                    items: 300,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: CustomEstateCategory(
+                    title: "Cottage",
+                    icon: Icons.cottage,
+                    items: 312,
+                  ),
                 ),
               ],
             ),
@@ -194,40 +234,67 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class CustomEstatePill extends StatelessWidget {
+class CustomEstateCategory extends StatelessWidget {
   final String title;
   final IconData icon;
-  const CustomEstatePill({
+  final int items;
+  const CustomEstateCategory({
     super.key,
     required this.title,
     required this.icon,
+    required this.items,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade200, width: 1.0),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        children: [
-          Icon(
-            icon,
-            color: kGreyColor,
-          ),
-          const SizedBox(
-            width: 8.0,
-          ),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(routeTransition(const CategoryView()));
+      },
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          color: kGreyColor.withOpacity(0.3),
+          border: Border.all(color: Colors.grey.shade200, width: 1.0),
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: kSecondaryColor,
+              size: 30,
             ),
-          ),
-        ],
+            const SizedBox(
+              width: 8.0,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color: kBlackColor,
+                  ),
+                ),
+                const SizedBox(
+                  height: 5.0,
+                ),
+                Text(
+                  "$items items",
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: kFadedBlack,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

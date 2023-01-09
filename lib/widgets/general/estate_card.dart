@@ -61,7 +61,7 @@ class EstateListingCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
               Text(
-                "\$280  /m",
+                "\$280/month",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
