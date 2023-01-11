@@ -45,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
           child: Text(
             "Super Estate Agency",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: kLargeTextSize,
               fontWeight: FontWeight.bold,
               color: kBlackColor,
             ),
@@ -91,6 +91,7 @@ class _HomeViewState extends State<HomeView> {
                           border: InputBorder.none,
                           prefixIcon: const Icon(Icons.search),
                           hintText: 'Search city or area',
+                          hintStyle: const TextStyle(fontSize: kMediumTextSize),
                         ),
                       ),
                     ),
@@ -170,7 +171,7 @@ class _HomeViewState extends State<HomeView> {
                 const Text(
                   "Featured Listings",
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: kHeaderTextSize,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -179,7 +180,7 @@ class _HomeViewState extends State<HomeView> {
                   child: const Text(
                     "See all",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: kMediumTextSize,
                       color: kGreyColor,
                       fontWeight: FontWeight.w600,
                     ),
@@ -213,7 +214,7 @@ class _HomeViewState extends State<HomeView> {
             const Text(
               "Recommended",
               style: TextStyle(
-                fontSize: 17,
+                fontSize: kHeaderTextSize,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -275,7 +276,7 @@ class CustomEstateCategory extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 13,
+                    fontSize: kMediumTextSize,
                     fontWeight: FontWeight.w500,
                     color: kBlackColor,
                   ),
@@ -286,7 +287,7 @@ class CustomEstateCategory extends StatelessWidget {
                 Text(
                   "$items items",
                   style: const TextStyle(
-                    fontSize: 12,
+                    fontSize: kSmallerTextSize,
                     fontWeight: FontWeight.w500,
                     color: kFadedBlack,
                   ),

@@ -32,7 +32,7 @@ class _EstateViewState extends State<EstateView> {
           child: Text(
             "360ADR Chelsea Loft Drive!",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: kHeaderTextSize,
               fontWeight: FontWeight.w600,
               color: kBlackColor,
               overflow: TextOverflow.ellipsis,
@@ -87,8 +87,8 @@ class _EstateViewState extends State<EstateView> {
                       const Text(
                         "360ADR Chelsea Loft Drive!",
                         style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
+                          fontSize: kMediumTextSize,
+                          fontWeight: FontWeight.w500,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -98,7 +98,7 @@ class _EstateViewState extends State<EstateView> {
                       const Text(
                         "\$280/month",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: kMediumTextSize,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -117,7 +117,7 @@ class _EstateViewState extends State<EstateView> {
                       const Text(
                         "Amenities",
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: kHeaderTextSize,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -158,13 +158,13 @@ class _EstateViewState extends State<EstateView> {
                           const Text(
                             "Tennant Reviews",
                             style: TextStyle(
-                              fontSize: 17,
+                              fontSize: kHeaderTextSize,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add_circle_outline,
                               color: kSecondaryColor,
                               size: 30,
@@ -208,7 +208,7 @@ class _EstateViewState extends State<EstateView> {
                     child: const Text(
                       "Book Viewing",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: kLargeTextSize,
                         color: Colors.white,
                       ),
                     ),
@@ -274,15 +274,15 @@ class TennantReview extends StatelessWidget {
                   Text(
                     "Benevolent Mudzinganyama",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: kMediumTextSize,
                       color: kBlackColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     "02/09/2022",
-                    style: const TextStyle(
-                      fontSize: 13,
+                    style: TextStyle(
+                      fontSize: kSmallerTextSize,
                       color: kFadedBlack,
                     ),
                   ),
@@ -297,7 +297,7 @@ class TennantReview extends StatelessWidget {
         const Text(
           "Comment goes like this; The quick brown fox jumps over the little fence.",
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 13,
             color: kFadedBlack,
           ),
         ),

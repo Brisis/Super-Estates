@@ -43,7 +43,7 @@ class SettingsItem extends StatelessWidget {
       title: Text(
         title,
         style: const TextStyle(
-          fontSize: 15,
+          fontSize: kMediumTextSize,
           color: kWhiteColor,
           fontWeight: FontWeight.w500,
         ),
@@ -52,7 +52,7 @@ class SettingsItem extends StatelessWidget {
           ? Text(
               trailing!,
               style: const TextStyle(
-                fontSize: 15,
+                fontSize: kMediumTextSize,
                 color: kWhiteColor,
               ),
             )

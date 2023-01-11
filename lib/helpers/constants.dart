@@ -12,6 +12,21 @@ const kWhiteColor = Colors.white;
 const kFadedBlack = Colors.black54;
 const kBlackColor = Colors.black;
 
+const kHeaderTextSize = 16.0;
+const kLargeTextSize = 18.0;
+const kMediumTextSize = 14.0;
+const kSmallerTextSize = 12.0;
+
+const kIconSize = 30.0;
+
+SizedBox verticalSpace({double height = 8.0}) {
+  return SizedBox(height: height);
+}
+
+SizedBox horizontalSpace({double width = 8.0}) {
+  return SizedBox(width: width);
+}
+
 PageTransition routeTransition(Widget screen) {
   return PageTransition(
     child: screen,

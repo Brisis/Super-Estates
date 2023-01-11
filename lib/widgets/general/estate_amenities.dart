@@ -38,7 +38,7 @@ class EstateAmenitiesItem extends StatelessWidget {
         Text(
           name,
           style: const TextStyle(
-            fontSize: 13,
+            fontSize: kSmallerTextSize,
             fontWeight: FontWeight.w500,
           ),
         ),

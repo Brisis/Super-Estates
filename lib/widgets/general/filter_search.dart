@@ -100,7 +100,7 @@ class FilterSearchDialog extends StatelessWidget {
                 const Text(
                   "Filters",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: kHeaderTextSize,
                     fontWeight: FontWeight.w600,
                     color: kBlackColor,
                   ),
@@ -110,7 +110,7 @@ class FilterSearchDialog extends StatelessWidget {
                   child: const Text(
                     "Reset",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: kMediumTextSize,
                       color: kSecondaryColor,
                     ),
                   ),
@@ -125,7 +125,7 @@ class FilterSearchDialog extends StatelessWidget {
                     const Text(
                       "Category",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: kHeaderTextSize,
                         fontWeight: FontWeight.bold,
                         color: kBlackColor,
                       ),
@@ -159,7 +159,7 @@ class FilterSearchDialog extends StatelessWidget {
                     const Text(
                       "Price Range",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: kHeaderTextSize,
                         fontWeight: FontWeight.bold,
                         color: kBlackColor,
                       ),
@@ -174,7 +174,7 @@ class FilterSearchDialog extends StatelessWidget {
                     const Text(
                       "Star Range",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: kHeaderTextSize,
                         fontWeight: FontWeight.bold,
                         color: kBlackColor,
                       ),
@@ -207,7 +207,7 @@ class FilterSearchDialog extends StatelessWidget {
                     const Text(
                       "Bedrooms",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: kHeaderTextSize,
                         fontWeight: FontWeight.bold,
                         color: kBlackColor,
                       ),
@@ -240,7 +240,7 @@ class FilterSearchDialog extends StatelessWidget {
                     const Text(
                       "Bathrooms",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: kHeaderTextSize,
                         fontWeight: FontWeight.bold,
                         color: kBlackColor,
                       ),
@@ -293,7 +293,7 @@ class FilterSearchDialog extends StatelessWidget {
                       child: const Text(
                         "Apply Filters",
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: kLargeTextSize,
                           color: Colors.white,
                         ),
                       ),
@@ -344,7 +344,7 @@ class CategoryOption extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                fontSize: 13,
+                fontSize: kMediumTextSize,
                 fontWeight: FontWeight.w500,
                 color: kBlackColor,
               ),
@@ -389,7 +389,7 @@ class StarRangeItem extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                fontSize: 13,
+                fontSize: kMediumTextSize,
                 fontWeight: FontWeight.w500,
                 color: kBlackColor,
               ),
@@ -425,7 +425,7 @@ class RoomsItem extends StatelessWidget {
         child: Text(
           title,
           style: const TextStyle(
-            fontSize: 13,
+            fontSize: kMediumTextSize,
             fontWeight: FontWeight.w500,
             color: kBlackColor,
           ),
@@ -472,14 +472,14 @@ class _PriceRangeSliderState extends State<PriceRangeSlider> {
               Text(
                 "\$0",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: kMediumTextSize,
                   color: kFadedBlack,
                 ),
               ),
               Text(
                 "\$1500",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: kMediumTextSize,
                   color: kFadedBlack,
                 ),
               ),

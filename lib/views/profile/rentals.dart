@@ -24,14 +24,12 @@ class RentalsView extends StatelessWidget {
             color: kBlackColor,
           ),
         ),
-        title: const Center(
-          child: Text(
-            "My Rentals",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: kBlackColor,
-            ),
+        title: const Text(
+          "My Rentals",
+          style: TextStyle(
+            fontSize: kHeaderTextSize,
+            fontWeight: FontWeight.w600,
+            color: kBlackColor,
           ),
         ),
       ),
@@ -106,8 +104,8 @@ class EstateCard extends StatelessWidget {
                   child: Text(
                     name,
                     style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
+                      fontSize: kMediumTextSize,
+                      fontWeight: FontWeight.w500,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -139,7 +137,7 @@ class EstateCard extends StatelessWidget {
                 const Text(
                   "Expires: 02/09/2023",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: kMediumTextSize,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

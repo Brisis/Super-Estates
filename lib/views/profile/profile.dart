@@ -19,16 +19,16 @@ class ProfileView extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             size: 30,
             color: kWhiteColor,
           ),
         ),
-        title: Text(
+        title: const Text(
           "My Profile",
           style: TextStyle(
-            fontSize: 18,
+            fontSize: kHeaderTextSize,
             fontWeight: FontWeight.bold,
             color: kWhiteColor,
           ),
@@ -54,16 +54,16 @@ class ProfileView extends StatelessWidget {
               children: const [
                 Text(
                   "Benevolent Mudzinganyama",
-                  style: const TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(
+                    fontSize: kMediumTextSize,
                     color: kWhiteColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   "Landlord",
-                  style: const TextStyle(
-                    fontSize: 15,
+                  style: TextStyle(
+                    fontSize: kSmallerTextSize,
                     color: kWhiteColor,
                   ),
                 ),
@@ -130,10 +130,10 @@ class ProfileView extends StatelessWidget {
                   // Navigator.of(context)
                   //     .push(routeTransition(const LoginScreen()));
                 },
-                label: Text(
+                label: const Text(
                   "Logout",
-                  style: const TextStyle(
-                    fontSize: 15,
+                  style: TextStyle(
+                    fontSize: kMediumTextSize,
                     color: kWhiteColor,
                   ),
                 ),
@@ -148,7 +148,7 @@ class ProfileView extends StatelessWidget {
                   ),
                   elevation: MaterialStateProperty.all(0),
                 ),
-                icon: Icon(
+                icon: const Icon(
                   Icons.logout,
                   color: kWhiteColor,
                 ),
@@ -158,7 +158,7 @@ class ProfileView extends StatelessWidget {
               child: Text(
                 "Super Estates @2022",
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: kSmallerTextSize,
                   color: kWhiteColor,
                   fontWeight: FontWeight.w600,
                 ),

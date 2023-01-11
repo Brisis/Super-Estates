@@ -27,14 +27,12 @@ class _CategoryViewState extends State<CategoryView> {
             color: kBlackColor,
           ),
         ),
-        title: const Center(
-          child: Text(
-            "Category: Apartments",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: kBlackColor,
-            ),
+        title: const Text(
+          "Category: Apartments",
+          style: TextStyle(
+            fontSize: kHeaderTextSize,
+            fontWeight: FontWeight.w600,
+            color: kBlackColor,
           ),
         ),
       ),
@@ -45,7 +43,7 @@ class _CategoryViewState extends State<CategoryView> {
             const Text(
               "128 Properties",
               style: TextStyle(
-                fontSize: 15,
+                fontSize: kMediumTextSize,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -58,7 +56,7 @@ class _CategoryViewState extends State<CategoryView> {
                 const Text(
                   "Nearest",
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: kHeaderTextSize,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -67,7 +65,7 @@ class _CategoryViewState extends State<CategoryView> {
                   child: const Text(
                     "See all",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: kMediumTextSize,
                       color: kGreyColor,
                       fontWeight: FontWeight.w600,
                     ),
@@ -101,7 +99,7 @@ class _CategoryViewState extends State<CategoryView> {
             const Text(
               "Around Me",
               style: TextStyle(
-                fontSize: 17,
+                fontSize: kHeaderTextSize,
                 fontWeight: FontWeight.w600,
               ),
             ),

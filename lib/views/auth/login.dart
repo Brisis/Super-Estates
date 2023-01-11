@@ -68,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
             const Text(
               "Welcome Back!",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: kLargeTextSize,
                 fontWeight: FontWeight.bold,
                 //color: Colors.white,
               ),
@@ -79,14 +79,17 @@ class _LoginViewState extends State<LoginView> {
             const Text(
               "Email",
               style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontSize: kMediumTextSize,
+                fontWeight: FontWeight.w600,
               ),
             ),
             TextField(
               controller: _emailController,
               decoration: const InputDecoration(
-                  border: OutlineInputBorder(), hintText: 'example@gmail.com'),
+                border: OutlineInputBorder(),
+                hintText: 'example@gmail.com',
+                hintStyle: TextStyle(fontSize: kMediumTextSize),
+              ),
             ),
             const SizedBox(
               height: 15,
@@ -94,8 +97,8 @@ class _LoginViewState extends State<LoginView> {
             const Text(
               "Password",
               style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontSize: kMediumTextSize,
+                fontWeight: FontWeight.w600,
               ),
             ),
             TextField(
@@ -104,6 +107,7 @@ class _LoginViewState extends State<LoginView> {
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'password',
+                hintStyle: TextStyle(fontSize: kMediumTextSize),
               ),
             ),
             const SizedBox(height: 15),
@@ -114,7 +118,10 @@ class _LoginViewState extends State<LoginView> {
                   onPressed: () {},
                   child: const Text(
                     'Forgot Password',
-                    style: TextStyle(color: kSecondaryColor, fontSize: 15),
+                    style: TextStyle(
+                      color: kSecondaryColor,
+                      fontSize: kMediumTextSize,
+                    ),
                   ),
                 ),
               ],
@@ -143,7 +150,7 @@ class _LoginViewState extends State<LoginView> {
                 child: const Text(
                   "Login",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: kLargeTextSize,
                     color: Colors.white,
                   ),
                 ),
@@ -160,7 +167,7 @@ class _LoginViewState extends State<LoginView> {
               child: const Text(
                 "New User? Create Account",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: kMediumTextSize,
                   color: kSecondaryColor,
                 ),
               ),

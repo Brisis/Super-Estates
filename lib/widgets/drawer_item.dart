@@ -47,7 +47,7 @@ class DrawerItem extends StatelessWidget {
                     Text(
                       "Benevolent Mudzinganyama",
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: kMediumTextSize,
                         color: kWhiteColor,
                         fontWeight: FontWeight.bold,
                       ),
@@ -55,7 +55,7 @@ class DrawerItem extends StatelessWidget {
                     Text(
                       "Landlord",
                       style: const TextStyle(
-                        fontSize: 15,
+                        fontSize: kSmallerTextSize,
                         color: kWhiteColor,
                       ),
                     ),
@@ -144,10 +144,10 @@ class DrawerItem extends StatelessWidget {
                     // Navigator.of(context)
                     //     .push(routeTransition(const LoginScreen()));
                   },
-                  label: Text(
+                  label: const Text(
                     "Logout",
-                    style: const TextStyle(
-                      fontSize: 15,
+                    style: TextStyle(
+                      fontSize: kMediumTextSize,
                       color: kWhiteColor,
                     ),
                   ),
@@ -162,7 +162,7 @@ class DrawerItem extends StatelessWidget {
                     ),
                     elevation: MaterialStateProperty.all(0),
                   ),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.logout,
                     color: kWhiteColor,
                   ),
@@ -172,7 +172,7 @@ class DrawerItem extends StatelessWidget {
                 child: Text(
                   "Super Estates @2022",
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: kSmallerTextSize,
                     color: kWhiteColor,
                     fontWeight: FontWeight.w600,
                   ),

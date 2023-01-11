@@ -19,10 +19,10 @@ class WelcomeScreen extends StatelessWidget {
               height: 20,
             ),
             const Text(
-              "Super Estates",
+              "Super Estate Agency",
               style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w400,
+                fontSize: kLargeTextSize,
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                     child: Text(
                       "Get Started",
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: kLargeTextSize,
                         color: Colors.white,
                       ),
                     ),

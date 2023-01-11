@@ -67,28 +67,20 @@ class _RegistrationViewState extends State<RegistrationView> {
               const SizedBox(
                 height: 10,
               ),
-              // const Text(
-              //   "Welcome Back!",
-              //   style: TextStyle(
-              //     fontSize: 24,
-              //     fontWeight: FontWeight.bold,
-              //     //color: Colors.white,
-              //   ),
-              // ),
-              // const SizedBox(
-              //   height: 15,
-              // ),
               const Text(
                 "Full Name",
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+                  fontSize: kMediumTextSize,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               TextField(
                 controller: _fullNameController,
                 decoration: const InputDecoration(
-                    border: OutlineInputBorder(), hintText: 'john doe'),
+                  border: OutlineInputBorder(),
+                  hintText: 'john doe',
+                  hintStyle: TextStyle(fontSize: kMediumTextSize),
+                ),
               ),
               const SizedBox(
                 height: 15,
@@ -96,15 +88,17 @@ class _RegistrationViewState extends State<RegistrationView> {
               const Text(
                 "Email",
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+                  fontSize: kMediumTextSize,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               TextField(
                 controller: _emailController,
                 decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'example@gmail.com'),
+                  border: OutlineInputBorder(),
+                  hintText: 'example@gmail.com',
+                  hintStyle: TextStyle(fontSize: kMediumTextSize),
+                ),
               ),
               const SizedBox(
                 height: 15,
@@ -112,8 +106,8 @@ class _RegistrationViewState extends State<RegistrationView> {
               const Text(
                 "Password",
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+                  fontSize: kMediumTextSize,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               TextField(
@@ -122,6 +116,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'password',
+                  hintStyle: TextStyle(fontSize: kMediumTextSize),
                 ),
               ),
               const SizedBox(height: 15),
@@ -148,7 +143,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                   child: const Text(
                     "Register",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: kLargeTextSize,
                       color: Colors.white,
                     ),
                   ),
@@ -165,7 +160,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 child: const Text(
                   "Already Registered? Login",
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: kMediumTextSize,
                     color: kSecondaryColor,
                   ),
                 ),

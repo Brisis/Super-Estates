@@ -63,14 +63,14 @@ class EstateListingCard extends StatelessWidget {
               Text(
                 "\$280/month",
                 style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+                  fontSize: kMediumTextSize,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Text(
                 "4.2",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: kMediumTextSize,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -91,8 +91,8 @@ class EstateListingCard extends StatelessWidget {
                   child: const Text(
                     "360ADR Chelsea Loft Drive!",
                     style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
+                      fontSize: kMediumTextSize,
+                      fontWeight: FontWeight.w500,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

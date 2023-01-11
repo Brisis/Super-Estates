@@ -55,7 +55,7 @@ class _ExploreEstatesViewState extends State<ExploreEstatesView> {
               child: Text(
                 "Explore Properties",
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: kHeaderTextSize,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -71,7 +71,7 @@ class _ExploreEstatesViewState extends State<ExploreEstatesView> {
                   const Text(
                     "Nearest",
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: kHeaderTextSize,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -80,7 +80,7 @@ class _ExploreEstatesViewState extends State<ExploreEstatesView> {
                     child: const Text(
                       "See all",
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: kMediumTextSize,
                         color: kGreyColor,
                         fontWeight: FontWeight.w600,
                       ),
